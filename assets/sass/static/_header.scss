@@ -19,7 +19,7 @@ The static site header.
   transition: background 300ms, color 300ms, text-shadow 300ms;
 
   &.alt {
-    background: $light-color;
+    background: rgba($light-color, 0.9);
     color: $dark-color;
     text-shadow: none;
   }
@@ -28,12 +28,56 @@ The static site header.
     @extend .color-invert;
   }
 
-  .site-title {
-
-  }
-
   .site-nav {
+    position: relative;
     font-size: 0.8em;
+
+    @media #{$small-only} {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      font-size: 1em;
+    }
+
+    .site-nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      .open, .close {
+        position: absolute;
+        line-height: $header-height;
+        right: ($column-gutter / 2);
+        top: 0;
+        font-size: 2em;
+        transition: opacity 300ms, transform 300ms;
+      }
+
+      .open {
+        opacity: 1;
+      }
+
+      .close {
+        opacity: 0;
+        transform: rotate(360deg);
+      }
+
+      &.active {
+        .open {
+          opacity: 0;
+          transform: rotate(360deg);
+        }
+
+        .close {
+          opacity: 1;
+        }
+      }
+
+      @media #{$medium-up} {
+        display: none;
+      }
+    }
 
     ul {
       list-style: none;
@@ -47,8 +91,36 @@ The static site header.
       margin-left: - $gutter / 2;
       margin-right: - $gutter / 2;
 
+      @media #{$small-only} {
+        background: #fff;
+        color: $body-font-color;
+        text-shadow: none;
+        text-align: left;
+        margin-top: $header-height;
+        display: none;
+        overflow: scroll;
+        border-bottom: 1px solid #ddd;
+        max-height: 300px;
+        max-height: 70vh;
+      }
+
+      &.visible {
+        display: block;
+      }
+
       a {
         display: block;
+      }
+
+      // All menu items
+      .menu-item {
+        &.mHover {
+          > .sub-menu {
+            visibility: visible;
+            opacity: 1;
+            display: block;
+          }
+        }
       }
 
       // First layer items
@@ -58,9 +130,17 @@ The static site header.
         text-transform: uppercase;
         letter-spacing: 2px;
 
+        @media #{$small-only} {
+          display: block;
+        }
+
         > a {
           padding: 0 $gutter / 2;
           line-height: $header-height;
+
+          @media #{$small-only} {
+            line-height: 3;
+          }
 
           &:hover {
             color: darken($light-color, 10%);
@@ -69,9 +149,11 @@ The static site header.
 
         // Show sub-menus
         &:hover {
-          > .sub-menu {
-            visibility: visible;
-            opacity: 1;
+          @media #{$medium-up} {
+            > .sub-menu {
+              visibility: visible;
+              opacity: 1;
+            }
           }
         }
       }
@@ -82,11 +164,23 @@ The static site header.
       visibility: hidden;
       opacity: 0;
       position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
       text-align: left;
       background: #fff;
+      border: 1px solid #ddd;
+      border-top: none;
+      box-shadow: 2px 2px 1px rgba(#000, 0.1);
       color: $dark-color;
       text-shadow: none;
       transition: visibility 300ms, opacity 300ms;
+
+      @media #{$small-only} {
+        position: relative;
+        left: auto;
+        transform: none;
+        display: none;
+      }
 
       li {
         border-bottom: 1px solid rgba(#000, 0.1);
@@ -132,9 +226,8 @@ The static site header.
 
     // First layer deep
     .menu > li > .sub-menu {
-      left: 0;
       top: 100%;
-      margin-top: 0;
+      margin-top: -1px;
       text-transform: none;
       font-size: 0.8em;
 
@@ -180,6 +273,7 @@ The static site header.
     color: inherit;
     text-align: center;
     text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(#000, 0.5);
   }
 
   .page-breadcrumbs {

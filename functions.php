@@ -52,7 +52,19 @@ add_action( 'after_setup_theme', function() {
 
 	// Allow shortcodes in text widget
 	add_filter('widget_text', 'do_shortcode');
+
+	// Image sizes
+	add_image_size( 'medium-square', 500, 500, true );
 });
+
+/**
+ * Modifies the default excerpt length (default 55).
+ *
+ * @since 0.1.0
+ */
+add_filter( 'excerpt_length', function ( $length ) {
+	return 20;
+}, 999 );
 
 /**
  * Register theme files.
@@ -122,6 +134,7 @@ add_action( 'wp_enqueue_scripts', function () {
 add_action( 'after_setup_theme', function () {
 
 	register_nav_menu( 'primary', 'Primary Menu' );
+	register_nav_menu( 'footer', 'Footer Menu' );
 } );
 
 /**
@@ -139,12 +152,52 @@ add_action( 'widgets_init', function () {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
+
+	// Footer
+	register_sidebar( array(
+		'name' => 'Footer',
+		'id' => 'footer',
+		'description' => 'Displays on all pages in the footer.',
+		'before_widget'  => '<div id="%1$s" class="footer-widget %2$s columns '. stcath_count_widgets( 'footer' ) .'">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	));
+
+	// Home About Us
+	register_sidebar( array(
+		'name' => 'Home About Us',
+		'id' => 'home-about-us',
+		'description' => 'Displays on the home page.',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+		'before_widget' => '',
+		'after_widget' => '',
+	));
+
+	// Home Newsletter Signup
+	register_sidebar( array(
+		'name' => 'Home Newsletter Signup',
+		'id' => 'home-newsletter',
+		'description' => 'Displays on the home page.',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+		'before_widget' => '',
+		'after_widget' => '',
+	));
 } );
 
-if ( ! is_admin() ) {
-	require_once __DIR__ . '/includes/theme-functions.php';
-}
+require_once __DIR__ . '/includes/theme-functions.php';
 
 // Include other static files
 require_once __DIR__ . '/shortcodes.php';
 require_once __DIR__ . '/admin/admin.php';
+
+// Widgets
+require_once __DIR__ . '/includes/widgets/text-icon.php';
+require_once __DIR__ . '/includes/widgets/image.php';
+
+// Shortcodes
+require_once __DIR__ . '/includes/shortcodes/social.php';
+require_once __DIR__ . '/includes/shortcodes/button.php';
+require_once __DIR__ . '/includes/shortcodes/contact.php';

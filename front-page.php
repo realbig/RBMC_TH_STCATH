@@ -58,21 +58,32 @@ $features = get_posts( array(
 
 if ( ! empty( $features ) ) : ?>
 
-	<section class="home-features">
+	<section class="home-features home-section">
 
 		<div class="home-features-container row">
 			<div class="columns small-12">
 
-				<ul class="features small-block-grid-3">
+				<ul class="features small-block-grid-1 medium-block-grid-3">
 
 					<?php foreach ( $features as $event ) : ?>
 
 						<li class="feature">
-							<h2 class="feature-title">
+							<h2 class="feature-title home-title">
 								<?php echo get_the_title( $event->ID ); ?>
 							</h2>
 
-							<?php echo get_the_post_thumbnail( $event->ID, 'large' ); ?>
+							<div class="feature-image">
+								<?php
+								if ( $page = get_post_meta( $event->ID, '_feature_link', true ) ) {
+									echo '<a href="' . get_permalink( $page ) . '">';
+								}
+
+								echo get_the_post_thumbnail( $event->ID, 'large' );
+
+								echo '<span class="feature-image-overlay"></span>';
+								echo $page ? '</a>' : '';
+								?>
+							</div>
 
 							<div class="feature-copy">
 								<?php echo apply_filters( 'the_content', $event->post_content ); ?>
@@ -97,63 +108,286 @@ $events = get_posts( array(
 
 if ( ! empty( $events ) ) : ?>
 
-	<section class="home-events row">
+	<section class="home-events home-section">
 
-		<div class="columns small-12 medium-4">
-
-		</div>
-
-		<div class="columns small-12 medium-8">
-
-			<h2>Upcoming Events</h2>
-
-			<ul class="events small-block-grid-3">
+		<div class="row">
+			<div class="columns small-12 medium-4">
+				<div class="upcoming-event">
 
 				<?php
-				foreach ( $events as $event ) :
-					$start_date = strtotime( tribe_get_event_meta( $event->ID, '_EventStartDate', true ) );
-					$end_date   = strtotime( tribe_get_event_meta( $event->ID, '_EventEndDate', true ) );
+				$event      = $events[0];
+				$start_date = strtotime( tribe_get_event_meta( $event->ID, '_EventStartDate', true ) );
+				$end_date   = strtotime( tribe_get_event_meta( $event->ID, '_EventEndDate', true ) );
+				?>
+
+				<div class="event-image">
+					<a href="<?php echo get_permalink( $event->ID ); ?>">
+						<?php echo wp_get_attachment_image( get_post_thumbnail_id( $event->ID ), 'full' ); ?>
+						<div class="event-image-text">Next coming event</div>
+						<div class="event-image-cover">
+							<span class="icon-eye"></span>
+						</div>
+					</a>
+				</div>
+
+				<div class="event-countdown">
+					<?php
+					the_widget( 'TribeCountdownWidget', array(
+						'title'        => '',
+						'event_ID'     => $event->ID,
+						'event_date'   => null,
+						'show_seconds' => true,
+						'complete'     => 'Hooray!',
+					) );
 					?>
+				</div>
 
-					<li class="event row">
-						<div class="event-date columns small-2">
-							<?php echo date( 'd', $start_date ); ?>
-							<?php echo date( 'M, y', $start_date ); ?>
-						</div>
+				<div class="event-meta">
+					<h3 class="event-title">
+						<?php echo get_the_title( $event->ID ); ?>
+					</h3>
 
-						<div class="event-content columns small-8">
-							<h3 class="event-date">
-								<?php echo get_the_title( $event->ID ); ?>
-							</h3>
+					<p class="event-time">
+						<?php echo date( 'F jS, Y', $start_date ); ?> at <?php echo date( 'g:i a', $start_date ); ?>
+					</p>
 
-							<p class="event-time">
-								<?php echo date( 'l, g:i a', $start_date ); ?>
-								-
-								<?php echo date( 'g:i a', $end_date ); ?>
-							</p>
+					<?php
+					if ( tribe_get_address( $event->ID ) || tribe_get_city( $event->ID ) || tribe_get_state( $event->ID ) ) :
+						?>
+						<p class="event-location">
+							<?php echo tribe_get_address( $event->ID ); ?>,
+							<?php echo tribe_get_city( $event->ID ); ?>,
+							<?php echo tribe_get_state( $event->ID ); ?>
+						</p>
+					<?php endif; ?>
+				</div>
 
-							<div class="event-location">
-								<?php echo tribe_get_address( $event->ID ); ?>,
-								<?php echo tribe_get_city( $event->ID ); ?>,
-								<?php echo tribe_get_state( $event->ID ); ?>
+				<div class="event-actions">
+					<a href="#" class="event-register button expand">
+						Register
+					</a>
+				</div>
+
+				</div>
+			</div>
+
+			<div class="events-list columns small-12 medium-8">
+
+				<h2 class="home-title">Upcoming Events</h2>
+
+				<ul class="events">
+
+					<?php
+					foreach ( $events as $event ) :
+
+						// Skip first event because it's already highlighted in "next upcoming event"
+						if ( $event === $events[0] ) {
+							continue;
+						}
+
+						$start_date = strtotime( tribe_get_event_meta( $event->ID, '_EventStartDate', true ) );
+						$end_date   = strtotime( tribe_get_event_meta( $event->ID, '_EventEndDate', true ) );
+						?>
+
+						<li class="event row expand">
+							<div class="event-date columns small-3 medium-2">
+							<span class="day">
+								<?php echo date( 'd', $start_date ); ?>
+							</span>
+
+							<span class="month-year">
+								<?php echo date( 'M, y', $start_date ); ?>
+							</span>
 							</div>
-						</div>
 
-						<div class="event-actions columns small-12">
-							<a href="#" class="button">
-								Register
-							</a>
-						</div>
-					</li>
+							<div class="event-content columns small-9 medium-7">
+								<h3 class="event-title">
+									<a href="<?php echo get_permalink( $event->ID ); ?>">
+										<?php echo get_the_title( $event->ID ); ?>
+									</a>
+								</h3>
 
-				<?php endforeach; ?>
+								<p class="event-time">
+									<?php echo date( 'l, g:i a', $start_date ); ?>
+									-
+									<?php echo date( 'g:i a', $end_date ); ?>
+								</p>
 
-			</ul>
+								<?php
+								if ( tribe_get_address( $event->ID ) || tribe_get_city( $event->ID ) || tribe_get_state( $event->ID ) ) :
+									?>
+									<div class="event-location">
+										<?php echo tribe_get_address( $event->ID ); ?>,
+										<?php echo tribe_get_city( $event->ID ); ?>,
+										<?php echo tribe_get_state( $event->ID ); ?>
+									</div>
+								<?php endif; ?>
+							</div>
 
+							<div class="event-actions columns small-12 medium-3">
+								<a href="#" class="button show-for-medium-up">
+									Register
+								</a>
+
+								<a href="#" class="button expand hide-for-medium-up">
+									Register
+								</a>
+							</div>
+						</li>
+
+					<?php endforeach; ?>
+
+				</ul>
+
+			</div>
 		</div>
 
 	</section>
 
-<?php endif;
+<?php
+endif;
 
+global $post;
+
+$posts = get_posts( array(
+	'numberposts' => 6,
+) );
+
+if ( ! empty( $posts ) ) :
+	?>
+	<section class="home-blog home-section row">
+		<div class="columns small-12">
+
+			<h2 class="home-title">Community Information</h2>
+
+			<div class="row expand">
+
+				<?php
+				$post = $posts[0];
+				setup_postdata( $post );
+				?>
+
+				<article <?php post_class( array( 'from-the-pastor', 'columns', 'small-12', 'medium-4' ) ); ?>>
+
+					<h3>From the Pastor</h3>
+
+					<?php if ( has_post_thumbnail() ) : ?>
+						<div class="post-thumbnail">
+							<?php the_post_thumbnail( 'large' ); ?>
+						</div>
+					<?php endif; ?>
+
+					<h4 class="post-title">
+						<a href="<?php the_permalink(); ?>" class="color-invert">
+							<?php the_title(); ?>
+						</a>
+					</h4>
+
+					<?php stcath_post_meta(); ?>
+
+					<div class="post-excerpt">
+						<?php the_excerpt(); ?>
+					</div>
+
+					<a href="<?php the_permalink(); ?>">
+						Continue reading
+					</a>
+
+				</article>
+
+				<div class="columns small-12 medium-8">
+					<ul class="small-block-grid-1 medium-block-grid-2">
+						<?php
+						$i = 0;
+						foreach ( $posts as $post ) :
+							$i++;
+							if ( $i === 1 ) {
+								continue;
+							}
+							setup_postdata( $post );
+							?>
+
+							<li>
+								<article <?php post_class(); ?>>
+
+									<h4 class="post-title">
+										<a href="<?php the_permalink(); ?>" class="color-invert">
+											<?php the_title(); ?>
+										</a>
+									</h4>
+
+									<?php stcath_post_meta(); ?>
+
+									<div class="post-excerpt">
+										<?php the_excerpt(); ?>
+									</div>
+
+									<a href="<?php the_permalink(); ?>">
+										Continue reading
+									</a>
+
+								</article>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+<?php
+endif;
+
+$gallery_items = get_posts( array(
+	'post_type' => 'gallery',
+	'numberposts' => 5,
+));
+
+if ( ! empty( $gallery_items ) ) :
+	?>
+	<section class="home-gallery home-section">
+		<ul class="gallery-items small-block-grid-1 medium-block-grid-5">
+
+			<?php
+			foreach ( $gallery_items as $post ) :
+				setup_postdata( $post );
+				$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' )[0];
+				?>
+				<li class="gallery-item">
+					<a href="<?php echo $image; ?>" rel="lightbox">
+						<?php the_post_thumbnail( 'medium-square' ); ?>
+						<div class="gallery-item-cover"></div>
+						<div class="gallery-item-icon icon-image"></div>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+
+		<div class="gallery-text">
+			<span class="icon-images"></span><br/>
+			Updates from our gallery
+		</div>
+	</section>
+	<?php
+endif;
+?>
+
+<section class="home-about home-section row">
+	<div class="about-us columns small-12 medium-8">
+		<?php dynamic_sidebar( 'home-about-us' ); ?>
+	</div>
+
+	<div class="newsletter-signup columns small-12 medium-4">
+		<h3>
+			News Subscription
+		</h3>
+
+		<?php dynamic_sidebar( 'home-newsletter' ); ?>
+
+		<input type="text" placeholder="Enter your email" />
+
+		<input type="button" class="button" value="Subscribe" />
+	</div>
+</section>
+
+<?php
 get_footer();

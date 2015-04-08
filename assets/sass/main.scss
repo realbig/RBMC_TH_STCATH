@@ -8,6 +8,7 @@ Version: 1.0.0
 
 // Vendor
 @import "../vendor/css/normalize";
+@import "../vendor/css/icomoon";
 
 // Deps
 @import "settings.scss";
@@ -34,6 +35,12 @@ Version: 1.0.0
 @import "templates/page";
 @import "templates/single-post";
 @import "templates/home";
+
+// Partials
+@import "partials/post-list";
+
+// Shortcodes
+@import "shortcodes/social";
 
 // Overrides
 @import "wp";

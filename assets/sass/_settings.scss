@@ -10,7 +10,7 @@ throughout this theme's SASS files.
 // Extra colors
 $dark-color: #333;
 $medium-color: #999;
-$light-color: #fff;
+$light-color: #f8f8f8;
 
 // We use these as default colors throughout
 $primary-color: #967adc;
@@ -20,16 +20,22 @@ $success-color: #43AC6A;
 $warning-color: #f08a24;
 $info-color: #a0d3e8;
 
+$body-bg: $light-color;
+
 // We use these to define default font stacks
 $font-family-sans-serif: "Roboto", sans-serif;
 $font-family-serif: "Volkhov", serif;
 $font-family-cursive: 'Dancing Script', cursive;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
-$body-font-color: #222;
+$body-font-color: #666;
+$paragraph-line-height: 1.8;
 
 // Sizes
 $header-height: 80px;
 $gutter: 30px;
+$column-gutter: rem-calc(30);
+$base-font-size: 14px;
+$rem-base: $base-font-size;
 
 // We use these to control header font styles
 $header-font-family: $font-family-sans-serif;

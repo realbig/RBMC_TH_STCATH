@@ -7,4 +7,51 @@ The static site footer.
 @import "../settings";
 
 #site-footer {
+  .footer-widgets {
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 1px 1px 1px rgba(#000, 0.05);
+    padding: ($gutter / 2) 0;
+
+    p {
+      margin: 0;
+    }
+
+    .footer-widget {
+      @media #{$small-only} {
+        margin-top: $gutter / 2;
+        margin-bottom: $gutter / 2;
+      }
+    }
+
+    .widget-title {
+      font-size: 1em;
+      text-transform: uppercase;
+      color: $primary-color;
+    }
+  }
+
+  .footer-copyright {
+    padding: $gutter 0;
+    color: lighten($body-font-color, 20%);
+
+    .menu {
+      list-style: none;
+      margin: 0;
+
+      .menu-item {
+        display: inline-block;
+
+        a {
+          @extend .color-invert;
+        }
+
+        &:not(:first-of-type) {
+          &:before {
+            content: '/ ';
+          }
+        }
+      }
+    }
+  }
 }

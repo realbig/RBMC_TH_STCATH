@@ -43,6 +43,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<nav class="site-nav columns small-12 medium-9">
+
+				<div class="site-nav-toggle">
+					<span class="open icon-menu"></span>
+					<span class="close icon-cross"></span>
+				</div>
+
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'primary',

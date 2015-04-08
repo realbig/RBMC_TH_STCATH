@@ -1,0 +1,25 @@
+/*
+List of posts.
+
+@since 0.1.0
+*/
+
+@import "../settings";
+
+.post {
+  .post-title {
+    font-size: 1.3em;
+  }
+
+  .post-meta {
+    font-family: $font-family-serif;
+    color: $medium-color;
+    font-style: italic;
+    font-size: 0.8em;
+
+    a {
+      @extend .color-invert;
+      color: #222;
+    }
+  }
+}

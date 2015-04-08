@@ -19,3 +19,23 @@ function stcath_page_header( $image, $html = false ) {
 
 	include_once get_template_directory() . '/partials/page-header.php';
 }
+
+function stcath_post_meta() {
+	include get_template_directory() . '/partials/post-meta.php';
+}
+
+function stcath_count_widgets( $sidebar_id ) {
+
+	// If loading from front page, consult $_wp_sidebars_widgets rather than options
+	// to see if wp_convert_widget_settings() has made manipulations in memory.
+	global $_wp_sidebars_widgets;
+	if ( empty( $_wp_sidebars_widgets ) ) {
+		$_wp_sidebars_widgets = get_option( 'sidebars_widgets', array() );
+	}
+
+	$sidebars_widgets_count = $_wp_sidebars_widgets;
+
+	if ( isset( $sidebars_widgets_count[ $sidebar_id ] ) ) {
+		return 'small-12 medium-' . ( 12 / count( $sidebars_widgets_count[ $sidebar_id ] ) );
+	}
+}
