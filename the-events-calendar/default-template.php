@@ -24,14 +24,19 @@ function _stcath_eventtemplate_single_before( $html ) {
 
 	global $post;
 
-	$header_html = '<h1 class="page-title">' . get_the_title( $post->ID ) . '</h1>';
-	$header_html .= tribe_events_event_schedule_details( $post->ID, '<div class="event-details">', '</div>' );
+	if ( ( get_post_type() == 'tribe_events' && tribe_is_upcoming() ) || tribe_is_month() || tribe_is_by_date() ) {
+		$header_html = '<h1 class="page-title">Events</h1>';
+	} else {
+		$header_html = '<h1 class="page-title">' . get_the_title( $post->ID ) . '</h1>';
+		$header_html .= tribe_events_event_schedule_details( $post->ID, '<div class="event-details">', '</div>' );
+	}
+
 
 	stcath_page_header( null, $header_html );
 	?>
 
 	<article id="event-<?php the_id(); ?>" <?php post_class( array( 'page-content', 'row' ) ); ?>>
-		<div class="columns small-12">
+	<div class="columns small-12">
 	<?php
 
 	// Disable the details from showing up again
