@@ -37,7 +37,7 @@
 
         var active = $(this).hasClass('mHover');
 
-        $(this).closest('.site-nav .menu-item').removeClass('mHover');
+        $(this).closest('.site-nav').find('.menu-item').removeClass('mHover');
         $(this).parents('.menu-item').addClass('mHover');
 
         if (!active) {

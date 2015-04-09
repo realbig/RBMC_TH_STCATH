@@ -11,7 +11,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-function stcath_page_header( $image, $html = false ) {
+function stcath_page_header( $image = null, $html = false ) {
+
+	if ( $image === null ) {
+		if ( has_post_thumbnail() ) {
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+			$image = $image[0];
+		} else {
+			$image = get_template_directory_uri() . '/assets/images/temp-background.jpg';
+		}
+	}
 
 	global $stcath_page_header_image, $stcath_page_header_html;
 	$stcath_page_header_image = $image;

@@ -184,6 +184,7 @@ The static site header.
 
       li {
         border-bottom: 1px solid rgba(#000, 0.1);
+        position: relative;
 
         a {
           vertical-align: middle;
@@ -259,6 +260,12 @@ The static site header.
     // The rest of the sub menus
     .menu .sub-menu .sub-menu {
       border-top: 1px solid rgba(#000, 0.1);
+
+      @media #{$medium-up} {
+        left: 100%;
+        top: -1px;
+        transform: none;
+      }
     }
   }
 }
@@ -277,7 +284,12 @@ The static site header.
   }
 
   .page-breadcrumbs {
-    background: rgba(#000, 0.2);
+    background: rgba(#000, 0.4);
     padding: ($gutter / 2) 0;
+    text-shadow: 1px 1px 0 rgba(#000, 0.5);
+
+    a {
+      @extend .color-invert;
+    }
   }
 }

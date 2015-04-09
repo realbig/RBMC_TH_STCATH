@@ -190,7 +190,6 @@ add_action( 'widgets_init', function () {
 require_once __DIR__ . '/includes/theme-functions.php';
 
 // Include other static files
-require_once __DIR__ . '/shortcodes.php';
 require_once __DIR__ . '/admin/admin.php';
 
 // Widgets
@@ -201,3 +200,6 @@ require_once __DIR__ . '/includes/widgets/image.php';
 require_once __DIR__ . '/includes/shortcodes/social.php';
 require_once __DIR__ . '/includes/shortcodes/button.php';
 require_once __DIR__ . '/includes/shortcodes/contact.php';
+
+// Template Overrides
+require_once __DIR__ . '/the-events-calendar/default-template.php';

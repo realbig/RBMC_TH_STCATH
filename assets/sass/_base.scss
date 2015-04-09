@@ -1,5 +1,5 @@
 /*
-Base element settings (no classes or id's).
+Base theme settings.
 
 @since 0.1.0
 */
@@ -13,6 +13,10 @@ a {
       color: $anchor-font-color-hover;
     }
   }
+}
+
+input[type="submit"] {
+  @extend .button;
 }
 
 // Classes

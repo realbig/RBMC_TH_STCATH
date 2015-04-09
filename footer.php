@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php dynamic_sidebar( 'footer' ); ?>
 	</div>
 
-	<div class="footer-copyright row">
+	<div class="footer-copyright row small-only-text-center">
 		<div class="columns small-12 medium-6">
 			&copy <?php echo date( 'Y' ); ?> St. Catherine Laboure Parish / <a href="/about-this-site/">About This Site</a>
 		</div>

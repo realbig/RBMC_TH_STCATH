@@ -1,0 +1,51 @@
+/*
+Styles single events.
+
+@since 0.1.0
+*/
+
+@import "../settings";
+
+body.single-tribe_events {
+
+  // Overrides
+  #tribe-events-pg-template {
+    max-width: inherit;
+    margin: inherit;
+  }
+
+  .tribe-events-schedule, .tribe-events-header {
+    display: none !important;
+  }
+
+  #tribe-events .tribe-events-button {
+    @extend .button;
+  }
+
+  // Other adjustments
+  #page-header {
+    text-align: center;
+
+    .event-details {
+      display: inline-block;
+      font-size: 1.5em;
+      border-radius: 100px;
+      color: #fff;
+      border: 3px solid rgba(#fff, 0.5);
+      padding: 0.5em 1em;
+      text-shadow: 1px 1px 0 rgba(#000, 0.5);
+      margin-bottom: $gutter;
+    }
+
+    .page-breadcrumbs {
+      text-align: left;
+    }
+  }
+
+  .tribe-events-cal-links {
+    .tribe-events-button {
+      @extend .tiny;
+      margin-right: 1em !important;
+    }
+  }
+}

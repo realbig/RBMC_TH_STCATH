@@ -6,7 +6,7 @@ Styles shared among all templates.
 
 @import "../settings";
 
-.page-content {
+.page-content, .post-content {
   margin-top: $gutter;
   margin-bottom: $gutter;
 }

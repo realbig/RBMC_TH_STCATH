@@ -101,9 +101,8 @@ if ( ! empty( $features ) ) : ?>
 
 <?php endif;
 
-$events = get_posts( array(
-	'post_type'   => 'tribe_events',
-	'numberposts' => 3,
+$events = tribe_get_events( array(
+	'posts_per_page' => 4,
 ) );
 
 if ( ! empty( $events ) ) : ?>
@@ -350,7 +349,8 @@ if ( ! empty( $gallery_items ) ) :
 			<?php
 			foreach ( $gallery_items as $post ) :
 				setup_postdata( $post );
-				$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' )[0];
+				$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+				$image = $image[0];
 				?>
 				<li class="gallery-item">
 					<a href="<?php echo $image; ?>" rel="lightbox">
