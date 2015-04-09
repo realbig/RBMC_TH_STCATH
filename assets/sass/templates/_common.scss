@@ -9,4 +9,8 @@ Styles shared among all templates.
 .page-content, .post-content {
   margin-top: $gutter;
   margin-bottom: $gutter;
+
+  ul {
+    margin: 1em 0 1em 3em;
+  }
 }

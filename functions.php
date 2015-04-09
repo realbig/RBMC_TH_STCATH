@@ -135,6 +135,7 @@ add_action( 'after_setup_theme', function () {
 
 	register_nav_menu( 'primary', 'Primary Menu' );
 	register_nav_menu( 'footer', 'Footer Menu' );
+	register_nav_menu( 'error-404', '404 Error Menu' );
 } );
 
 /**
@@ -143,15 +144,6 @@ add_action( 'after_setup_theme', function () {
  * @since 0.1.0
  */
 add_action( 'widgets_init', function () {
-
-	// Page
-	register_sidebar( array(
-		'name' => 'Page',
-		'id' => 'page',
-		'description' => 'Displays on all pages.',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	));
 
 	// Footer
 	register_sidebar( array(

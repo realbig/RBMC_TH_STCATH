@@ -5014,6 +5014,8 @@ throughout this theme's SASS files.
 .page-content, .post-content {
   margin-top: 30px;
   margin-bottom: 30px; }
+  .page-content ul, .post-content ul {
+    margin: 1em 0 1em 3em; }
 
 /*
 Styles page.php.

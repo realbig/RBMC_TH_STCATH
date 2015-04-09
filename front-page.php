@@ -113,59 +113,59 @@ if ( ! empty( $events ) ) : ?>
 			<div class="columns small-12 medium-4">
 				<div class="upcoming-event">
 
-				<?php
-				$event      = $events[0];
-				$start_date = strtotime( tribe_get_event_meta( $event->ID, '_EventStartDate', true ) );
-				$end_date   = strtotime( tribe_get_event_meta( $event->ID, '_EventEndDate', true ) );
-				?>
-
-				<div class="event-image">
-					<a href="<?php echo get_permalink( $event->ID ); ?>">
-						<?php echo wp_get_attachment_image( get_post_thumbnail_id( $event->ID ), 'full' ); ?>
-						<div class="event-image-text">Next coming event</div>
-						<div class="event-image-cover">
-							<span class="icon-eye"></span>
-						</div>
-					</a>
-				</div>
-
-				<div class="event-countdown">
 					<?php
-					the_widget( 'TribeCountdownWidget', array(
-						'title'        => '',
-						'event_ID'     => $event->ID,
-						'event_date'   => null,
-						'show_seconds' => true,
-						'complete'     => 'Hooray!',
-					) );
+					$event      = $events[0];
+					$start_date = strtotime( tribe_get_event_meta( $event->ID, '_EventStartDate', true ) );
+					$end_date   = strtotime( tribe_get_event_meta( $event->ID, '_EventEndDate', true ) );
 					?>
-				</div>
 
-				<div class="event-meta">
-					<h3 class="event-title">
-						<?php echo get_the_title( $event->ID ); ?>
-					</h3>
+					<div class="event-image">
+						<a href="<?php echo get_permalink( $event->ID ); ?>">
+							<?php echo wp_get_attachment_image( get_post_thumbnail_id( $event->ID ), 'full' ); ?>
+							<div class="event-image-text">Next coming event</div>
+							<div class="event-image-cover">
+								<span class="icon-eye"></span>
+							</div>
+						</a>
+					</div>
 
-					<p class="event-time">
-						<?php echo date( 'F jS, Y', $start_date ); ?> at <?php echo date( 'g:i a', $start_date ); ?>
-					</p>
-
-					<?php
-					if ( tribe_get_address( $event->ID ) || tribe_get_city( $event->ID ) || tribe_get_state( $event->ID ) ) :
+					<div class="event-countdown">
+						<?php
+						the_widget( 'TribeCountdownWidget', array(
+							'title'        => '',
+							'event_ID'     => $event->ID,
+							'event_date'   => null,
+							'show_seconds' => true,
+							'complete'     => 'Hooray!',
+						) );
 						?>
-						<p class="event-location">
-							<?php echo tribe_get_address( $event->ID ); ?>,
-							<?php echo tribe_get_city( $event->ID ); ?>,
-							<?php echo tribe_get_state( $event->ID ); ?>
-						</p>
-					<?php endif; ?>
-				</div>
+					</div>
 
-				<div class="event-actions">
-					<a href="#" class="event-register button expand">
-						Register
-					</a>
-				</div>
+					<div class="event-meta">
+						<h3 class="event-title">
+							<?php echo get_the_title( $event->ID ); ?>
+						</h3>
+
+						<p class="event-time">
+							<?php echo date( 'F jS, Y', $start_date ); ?> at <?php echo date( 'g:i a', $start_date ); ?>
+						</p>
+
+						<?php
+						if ( tribe_get_address( $event->ID ) || tribe_get_city( $event->ID ) || tribe_get_state( $event->ID ) ) :
+							?>
+							<p class="event-location">
+								<?php echo tribe_get_address( $event->ID ); ?>,
+								<?php echo tribe_get_city( $event->ID ); ?>,
+								<?php echo tribe_get_state( $event->ID ); ?>
+							</p>
+						<?php endif; ?>
+					</div>
+
+					<div class="event-actions">
+						<a href="<?php echo get_permalink( $event->ID ); ?>" class="event-register button expand">
+							View
+						</a>
+					</div>
 
 				</div>
 			</div>
@@ -224,12 +224,12 @@ if ( ! empty( $events ) ) : ?>
 							</div>
 
 							<div class="event-actions columns small-12 medium-3">
-								<a href="#" class="button show-for-medium-up">
-									Register
+								<a href="<?php echo get_permalink( $event->ID ); ?>" class="button show-for-medium-up">
+									View
 								</a>
 
-								<a href="#" class="button expand hide-for-medium-up">
-									Register
+								<a href="<?php echo get_permalink( $event->ID ); ?>" class="button expand hide-for-medium-up">
+									View
 								</a>
 							</div>
 						</li>
@@ -299,7 +299,7 @@ if ( ! empty( $posts ) ) :
 						<?php
 						$i = 0;
 						foreach ( $posts as $post ) :
-							$i++;
+							$i ++;
 							if ( $i === 1 ) {
 								continue;
 							}
@@ -337,9 +337,9 @@ if ( ! empty( $posts ) ) :
 endif;
 
 $gallery_items = get_posts( array(
-	'post_type' => 'gallery',
+	'post_type'   => 'gallery',
 	'numberposts' => 5,
-));
+) );
 
 if ( ! empty( $gallery_items ) ) :
 	?>
@@ -367,27 +367,27 @@ if ( ! empty( $gallery_items ) ) :
 			Updates from our gallery
 		</div>
 	</section>
-	<?php
+<?php
 endif;
 ?>
 
-<section class="home-about home-section row">
-	<div class="about-us columns small-12 medium-8">
-		<?php dynamic_sidebar( 'home-about-us' ); ?>
-	</div>
+	<section class="home-about home-section row">
+		<div class="about-us columns small-12 medium-8">
+			<?php dynamic_sidebar( 'home-about-us' ); ?>
+		</div>
 
-	<div class="newsletter-signup columns small-12 medium-4">
-		<h3>
-			News Subscription
-		</h3>
+		<div class="newsletter-signup columns small-12 medium-4">
+			<h3>
+				News Subscription
+			</h3>
 
-		<?php dynamic_sidebar( 'home-newsletter' ); ?>
+			<?php dynamic_sidebar( 'home-newsletter' ); ?>
 
-		<input type="text" placeholder="Enter your email" />
+			<input type="text" placeholder="Enter your email"/>
 
-		<input type="button" class="button" value="Subscribe" />
-	</div>
-</section>
+			<input type="button" class="button" value="Subscribe"/>
+		</div>
+	</section>
 
 <?php
 get_footer();
