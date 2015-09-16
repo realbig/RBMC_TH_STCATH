@@ -255,7 +255,8 @@ $posts = get_posts( array(
 	'numberposts' => 6,
 ) );
 
-if ( ! empty( $posts ) ) :
+// Temporarily disabled
+if ( FALSE && ! empty( $posts ) ) :
 	?>
 	<section class="home-blog home-section row">
 		<div class="columns small-12">
