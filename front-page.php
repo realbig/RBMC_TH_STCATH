@@ -172,7 +172,10 @@ if ( ! empty( $events ) ) : ?>
 
 			<div class="events-list columns small-12 medium-8">
 
-				<h2 class="home-title">Upcoming Events</h2>
+				<h2 class="home-title">
+					<a href="/events/">Upcoming Events</a>
+					<a href="/events/" class="button tiny">View All</a>
+				</h2>
 
 				<ul class="events">
 
