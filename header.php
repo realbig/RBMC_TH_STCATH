@@ -38,7 +38,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="site-title columns small-12 medium-3">
 				<a href="<?php bloginfo( 'url' ); ?>">
-					<?php bloginfo( 'title' ); ?>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-logo.jpg" />
+					<span class="site-title-text">
+						<?php bloginfo( 'title' ); ?>
+					</span>
 				</a>
 			</div>
 

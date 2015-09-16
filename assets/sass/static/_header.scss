@@ -28,6 +28,23 @@ The static site header.
     @extend .color-invert;
   }
 
+  .site-title {
+    position: relative;
+
+    .site-title-text {
+      position: absolute;
+      left: 170px;
+      white-space: nowrap;
+    }
+
+    img {
+      position: absolute;
+      width: auto;
+      height: 79px;
+      top: 0;
+    }
+  }
+
   .site-nav {
     position: relative;
     font-size: 0.8em;
