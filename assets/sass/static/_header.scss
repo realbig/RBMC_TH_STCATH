@@ -152,7 +152,7 @@ The static site header.
         }
 
         > a {
-          padding: 0 $gutter / 2;
+          padding: 0 5px;
           line-height: $header-height;
 
           @media #{$small-only} {
