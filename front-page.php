@@ -103,6 +103,7 @@ if ( ! empty( $features ) ) : ?>
 
 $events = tribe_get_events( array(
 	'posts_per_page' => 4,
+	'start_date' => current_time( 'Y-m-d' ),
 ) );
 
 if ( ! empty( $events ) ) : ?>
@@ -136,7 +137,7 @@ if ( ! empty( $events ) ) : ?>
 							'event_ID'     => $event->ID,
 							'event_date'   => null,
 							'show_seconds' => true,
-							'complete'     => 'Hooray!',
+							'complete'     => 'Happening Today',
 						) );
 						?>
 					</div>
