@@ -14,6 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Page opening
 add_filter( 'tribe_events_before_html', '_stcath_eventtemplate_single_before' );
 
+// Add event signup
+add_action( 'tribe_events_single_event_after_the_meta', 'stcath_eventtemplate_single_signup' );
+
 // Page closing
 add_filter( 'tribe_events_after_html', '_stcath_eventtemplate_single_after' );
 
@@ -48,6 +51,29 @@ function _stcath_eventtemplate_single_before( $html ) {
 	return $html;
 }
 
+function stcath_eventtemplate_single_signup() {
+
+	if ( ! ( $form_ID = get_post_meta( get_the_ID(), 'stcath_event_signup_form', true ) ) ) {
+		return;
+	}
+	?>
+	<div class="tribe-events-single-section tribe-events-event-meta primary tribe-clearfix">
+		<div class="tribe-events-meta-group" style="width: 100%;">
+			<h3 class="tribe-events-single-section-title">Event Signup</h3>
+
+			<?php
+			add_filter( 'gform_field_content', 'stcath_eventtemplate_signup_form_hide_fields', 10, 2 );
+
+			gravity_form( $form_ID, false, false, false, array(
+				'event_id' => get_the_title(),
+			) );
+
+			remove_filter( 'gform_field_content', 'stcath_eventtemplate_signup_form_hide_fields', 10 );
+			?>
+		</div>
+	</div>
+	<?php
+}
 
 function _stcath_eventtemplate_single_after( $html ) {
 	?>
@@ -56,4 +82,13 @@ function _stcath_eventtemplate_single_after( $html ) {
 	<?php
 
 	return $html;
+}
+
+function stcath_eventtemplate_signup_form_hide_fields( $content, $field ) {
+
+	$form_fields = get_post_meta( get_the_ID(), 'stcath_event_signup_form_fields', true );
+
+	if ( $field->type == 'hidden' || in_array( $field->id, $form_fields ) ) {
+		return $content;
+	}
 }

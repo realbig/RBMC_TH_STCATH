@@ -92,6 +92,15 @@ add_action( 'init', function () {
 		true
 	);
 
+	// Admin script
+	wp_register_script(
+		THEME_ID . '-admin',
+		get_template_directory_uri() . '/admin.js',
+		array( 'jquery' ),
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION,
+		true
+	);
+
 	// Theme fonts
 	if ( ! empty( $theme_fonts ) ) {
 		foreach ( $theme_fonts as $ID => $link ) {
@@ -125,6 +134,11 @@ add_action( 'wp_enqueue_scripts', function () {
 		}
 	}
 } );
+
+add_action( 'admin_enqueue_scripts', function () {
+
+	wp_enqueue_script( THEME_ID . '-admin' );
+});
 
 /**
  * Register nav menus.

@@ -16,6 +16,7 @@ require_once __DIR__ . '/pages/stcath-general.php';
 require_once __DIR__ . '/post-types/slide.php';
 require_once __DIR__ . '/post-types/feature.php';
 require_once __DIR__ . '/post-types/gallery.php';
+require_once __DIR__ . '/extra-meta/event.php';
 
 /**
  * Easy way to register a new post type!
