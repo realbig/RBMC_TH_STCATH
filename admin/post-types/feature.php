@@ -40,17 +40,31 @@ function _stcath_metabox_feature_link( $post ) {
 
 	wp_nonce_field( __FILE__, 'feature_link_nonce' );
 
-	$product_link = (int) get_post_meta( $post->ID, '_feature_link', true );
+	$feature_link          = get_post_meta( $post->ID, '_feature_link', true );
+	$feature_external_link = get_post_meta( $post->ID, '_feature_external_link', true );
 	?>
-	<label>
-		Select a page <br/>
-		<?php wp_dropdown_pages( array(
-			'selected' => $product_link ? $product_link : 0,
-			'name' => '_feature_link',
-		));
-		?>
-	</label>
-<?php
+	<p>
+		<label>
+			Select a page <br/>
+			<?php wp_dropdown_pages( array(
+				'selected' => $feature_link ? $feature_link : 0,
+				'name'     => '_feature_link',
+			) );
+			?>
+		</label>
+	</p>
+
+	<p>
+		<label>
+			External link <br/>
+
+			<input type="text" class="regular-text" name="_feature_external_link"
+			       value="<?php echo $feature_external_link; ?>"/> <br/>
+
+			<span class="description">Will override page link above</span>
+		</label>
+	</p>
+	<?php
 }
 
 add_action( 'save_post', function ( $post_ID ) {
@@ -73,6 +87,7 @@ add_action( 'save_post', function ( $post_ID ) {
 
 	$options = array(
 		'_feature_link',
+		'_feature_external_link',
 	);
 
 	foreach ( $options as $option ) {

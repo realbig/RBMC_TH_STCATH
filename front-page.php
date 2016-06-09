@@ -65,20 +65,22 @@ if ( ! empty( $features ) ) : ?>
 
 				<ul class="features small-block-grid-1 medium-block-grid-3">
 
-					<?php foreach ( $features as $event ) : ?>
+					<?php foreach ( $features as $feature ) : ?>
 
 						<li class="feature">
 							<h2 class="feature-title home-title">
-								<?php echo get_the_title( $event->ID ); ?>
+								<?php echo get_the_title( $feature->ID ); ?>
 							</h2>
 
 							<div class="feature-image">
 								<?php
-								if ( $page = get_post_meta( $event->ID, '_feature_link', true ) ) {
+								if ( $external_link = get_post_meta( $feature->ID, '_feature_external_link', true ) ) {
+									echo '<a href="' . esc_url_raw( $external_link ) . '">';
+								} elseif ( $page = get_post_meta( $feature->ID, '_feature_link', true ) ) {
 									echo '<a href="' . get_permalink( $page ) . '">';
 								}
 
-								echo get_the_post_thumbnail( $event->ID, 'large' );
+								echo get_the_post_thumbnail( $feature->ID, 'large' );
 
 								echo '<span class="feature-image-overlay"></span>';
 								echo $page ? '</a>' : '';
@@ -86,7 +88,7 @@ if ( ! empty( $features ) ) : ?>
 							</div>
 
 							<div class="feature-copy">
-								<?php echo apply_filters( 'the_content', $event->post_content ); ?>
+								<?php echo apply_filters( 'the_content', $feature->post_content ); ?>
 							</div>
 						</li>
 
