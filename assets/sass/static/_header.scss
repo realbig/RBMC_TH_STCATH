@@ -153,7 +153,7 @@ The static site header.
 
         > a {
           padding: 0 5px;
-          line-height: $header-height;
+          line-height: $header-height / 2;
 
           @media #{$small-only} {
             line-height: 3;
@@ -284,6 +284,13 @@ The static site header.
         transform: none;
       }
     }
+  }
+}
+
+#site-header #menu-secondary {
+  li {
+    font-style: italic;
+    text-transform: none;
   }
 }
 

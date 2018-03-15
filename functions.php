@@ -24,7 +24,7 @@ if ( defined( 'THEME_VERSION' ) || defined( 'THEME_ID' ) || isset( $theme_fonts 
 /**
  * The theme's current version (make sure to keep this up to date!)
  */
-define( 'THEME_VERSION', '1.1.0' );
+define( 'THEME_VERSION', '1.1.1' );
 
 /**
  * The theme's ID (used in handlers).
@@ -148,6 +148,7 @@ add_action( 'admin_enqueue_scripts', function () {
 add_action( 'after_setup_theme', function () {
 
 	register_nav_menu( 'primary', 'Primary Menu' );
+	register_nav_menu( 'secondary', 'Secondary Menu' );
 	register_nav_menu( 'footer', 'Footer Menu' );
 	register_nav_menu( 'error-404', '404 Error Menu' );
 } );

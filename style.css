@@ -3,7 +3,7 @@ Theme Name: St. Catherine Laboure Parish
 Description: Custom theme built for St. Catherine Laboure Parish by Real Big Marketing.
 Author: Joel Worsham
 Author URI: http://realbigmarketing.com
-Version: 1.1.0
+Version: 1.1.1
 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
@@ -3537,8 +3537,7 @@ button, .button, input[type="submit"], #tribe-events .tribe-events-button {
   background: #967adc;
   border-color: #6b44ce;
   color: #FFFFFF;
-  -webkit-transition: background-color 300ms ease-out;
-          transition: background-color 300ms ease-out; }
+  transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, input[type="submit"]:hover, #tribe-events .tribe-events-button:hover, .button:focus, input[type="submit"]:focus, #tribe-events .tribe-events-button:focus {
     background: #6b44ce; }
   button:hover, button:focus, .button:hover, input[type="submit"]:hover, #tribe-events .tribe-events-button:hover, .button:focus, input[type="submit"]:focus, #tribe-events .tribe-events-button:focus {
@@ -4155,7 +4154,7 @@ form .row textarea.columns {
 /* Label Styles */
 label {
   font-size: 1rem;
-  color: #4d4d4d;
+  color: #4d4c4c;
   cursor: pointer;
   display: block;
   font-weight: normal;
@@ -4265,8 +4264,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   height: 2.6428571429rem;
   width: 100%;
   box-sizing: border-box;
-  -webkit-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
-          transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
   input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
     box-shadow: 0 0 5px #999999;
     border-color: #999999; }
@@ -4397,7 +4395,7 @@ select {
   select.radius {
     border-radius: 3px; }
   select:hover {
-    background-color: #f3f3f3;
+    background-color: #f3f2f2;
     border-color: #999999; }
   select:disabled {
     background-color: #DDDDDD;
@@ -4567,8 +4565,7 @@ throughout this theme's SASS files.
   height: 80px;
   line-height: 80px;
   z-index: 50;
-  -webkit-transition: background 300ms, color 300ms, text-shadow 300ms;
-          transition: background 300ms, color 300ms, text-shadow 300ms; }
+  transition: background 300ms, color 300ms, text-shadow 300ms; }
   #site-header.alt {
     background: rgba(248, 248, 248, 0.9);
     color: #333;
@@ -4604,18 +4601,15 @@ throughout this theme's SASS files.
         right: 1.0714285714rem;
         top: 0;
         font-size: 2em;
-        -webkit-transition: opacity 300ms, -webkit-transform 300ms;
-                transition: opacity 300ms, transform 300ms; }
+        transition: opacity 300ms, transform 300ms; }
       #site-header .site-nav .site-nav-toggle .open {
         opacity: 1; }
       #site-header .site-nav .site-nav-toggle .close {
         opacity: 0;
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg); }
+        transform: rotate(360deg); }
       #site-header .site-nav .site-nav-toggle.active .open {
         opacity: 0;
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg); }
+        transform: rotate(360deg); }
       #site-header .site-nav .site-nav-toggle.active .close {
         opacity: 1; }
       @media only screen and (min-width: 40.063em) {
@@ -4659,12 +4653,12 @@ throughout this theme's SASS files.
             display: block; } }
         #site-header .site-nav .menu > li > a {
           padding: 0 5px;
-          line-height: 80px; }
+          line-height: 40px; }
           @media only screen and (max-width: 40em) {
             #site-header .site-nav .menu > li > a {
               line-height: 3; } }
           #site-header .site-nav .menu > li > a:hover {
-            color: #dfdfdf; }
+            color: #dfdede; }
         @media only screen and (min-width: 40.063em) {
           #site-header .site-nav .menu > li:hover > .sub-menu {
             visibility: visible;
@@ -4673,8 +4667,7 @@ throughout this theme's SASS files.
       visibility: hidden;
       opacity: 0;
       position: absolute;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
+      transform: translateX(-50%);
       left: 50%;
       text-align: left;
       background: #fff;
@@ -4683,14 +4676,12 @@ throughout this theme's SASS files.
       box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
       color: #333;
       text-shadow: none;
-      -webkit-transition: visibility 300ms, opacity 300ms;
-              transition: visibility 300ms, opacity 300ms; }
+      transition: visibility 300ms, opacity 300ms; }
       @media only screen and (max-width: 40em) {
         #site-header .site-nav .sub-menu {
           position: relative;
           left: auto;
-          -webkit-transform: none;
-                  transform: none;
+          transform: none;
           display: none; } }
       #site-header .site-nav .sub-menu li {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -4742,8 +4733,11 @@ throughout this theme's SASS files.
         #site-header .site-nav .menu .sub-menu .sub-menu {
           left: 100%;
           top: -1px;
-          -webkit-transform: none;
-                  transform: none; } }
+          transform: none; } }
+
+#site-header #menu-secondary li {
+  font-style: italic;
+  text-transform: none; }
 
 #page-header {
   background-size: cover;
@@ -4935,32 +4929,27 @@ throughout this theme's SASS files.
     background-size: cover;
     opacity: 1;
     z-index: 5;
-    -webkit-transition: opacity 500ms;
-            transition: opacity 500ms;
+    transition: opacity 500ms;
     overflow-x: hidden; }
     .home-slides .slides .slide.hidden {
       opacity: 0;
       z-index: 0; }
       .home-slides .slides .slide.hidden .slide-content {
         opacity: 0;
-        -webkit-transform: translateX(50px) translateY(-50%);
-                transform: translateX(50px) translateY(-50%); }
+        transform: translateX(50px) translateY(-50%); }
     .home-slides .slides .slide .slide-content {
       position: relative;
       top: 50%;
       margin-top: -50px;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-      -webkit-transition: -webkit-transform 500ms, opacity 500ms;
-              transition: transform 500ms, opacity 500ms;
-      -webkit-transition-delay: 1000ms;
-              transition-delay: 1000ms; }
+      transform: translateY(-50%);
+      transition: transform 500ms, opacity 500ms;
+      transition-delay: 1000ms; }
       .home-slides .slides .slide .slide-content .slide-title {
         text-transform: none !important;
         font-family: "Dancing Script", cursive; }
 
 .home-features {
-  background: #dfdfdf;
+  background: #dfdede;
   padding: 0; }
   .home-features .home-features-container {
     background: #f8f8f8;
@@ -4985,8 +4974,7 @@ throughout this theme's SASS files.
       left: 0;
       background: #967adc;
       opacity: 0.5;
-      -webkit-transition: opacity 500ms;
-              transition: opacity 500ms; }
+      transition: opacity 500ms; }
       .home-features .feature-image .feature-image-overlay:hover {
         opacity: 0; }
   .home-features .feature-copy {
@@ -5019,24 +5007,20 @@ throughout this theme's SASS files.
         bottom: 0;
         left: 0;
         background: transparent;
-        -webkit-transition: background 200ms;
-                transition: background 200ms; }
+        transition: background 200ms; }
         .home-events .upcoming-event .event-image .event-image-cover:hover {
           background: rgba(0, 0, 0, 0.6); }
           .home-events .upcoming-event .event-image .event-image-cover:hover [class*="icon"] {
             opacity: 1;
-            -webkit-transition-delay: 100ms;
-                    transition-delay: 100ms; }
+            transition-delay: 100ms; }
         .home-events .upcoming-event .event-image .event-image-cover [class*="icon"] {
           position: absolute;
           top: 50%;
-          -webkit-transform: translateY(-50%);
-                  transform: translateY(-50%);
+          transform: translateY(-50%);
           width: 100%;
           text-align: center;
           opacity: 0;
-          -webkit-transition: opacity 300ms;
-                  transition: opacity 300ms; }
+          transition: opacity 300ms; }
           .home-events .upcoming-event .event-image .event-image-cover [class*="icon"]:before {
             display: inline-block;
             color: #fff;
@@ -5065,7 +5049,7 @@ throughout this theme's SASS files.
         border-radius: 50%;
         height: 50px;
         width: 50px;
-        border: 3px solid #dfdfdf;
+        border: 3px solid #dfdede;
         display: inline-block;
         line-height: 47px; }
         .home-events .upcoming-event .tribe-countdown-time .tribe-countdown-number.tribe-countdown-days {
@@ -5126,14 +5110,12 @@ throughout this theme's SASS files.
   .home-gallery .gallery-text {
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     width: 100%;
     color: #fff;
     font-size: 2em;
     text-align: center;
-    -webkit-transition: opacity 200ms, visibility 200ms;
-            transition: opacity 200ms, visibility 200ms; }
+    transition: opacity 200ms, visibility 200ms; }
   .home-gallery .gallery-items {
     margin: 0; }
     .home-gallery .gallery-items .gallery-item {
@@ -5143,13 +5125,10 @@ throughout this theme's SASS files.
         opacity: 0; }
       .home-gallery .gallery-items .gallery-item:hover .gallery-item-icon {
         opacity: 1;
-        -webkit-transition-delay: 100ms;
-                transition-delay: 100ms; }
+        transition-delay: 100ms; }
         .home-gallery .gallery-items .gallery-item:hover .gallery-item-icon:before {
-          -webkit-transform: scale(1.2);
-                  transform: scale(1.2);
-          -webkit-transition-delay: 100ms;
-                  transition-delay: 100ms; }
+          transform: scale(1.2);
+          transition-delay: 100ms; }
       .home-gallery .gallery-items .gallery-item .gallery-item-cover {
         position: absolute;
         top: 0;
@@ -5158,26 +5137,22 @@ throughout this theme's SASS files.
         left: 0;
         background: #000;
         opacity: 0.6;
-        -webkit-transition: opacity 300ms;
-                transition: opacity 300ms; }
+        transition: opacity 300ms; }
       .home-gallery .gallery-items .gallery-item .gallery-item-icon {
         position: absolute;
         top: 50%;
         width: 100%;
         text-align: center;
         opacity: 0;
-        -webkit-transform: translateY(-50%);
-                transform: translateY(-50%);
-        -webkit-transition: opacity 300ms;
-                transition: opacity 300ms; }
+        transform: translateY(-50%);
+        transition: opacity 300ms; }
         .home-gallery .gallery-items .gallery-item .gallery-item-icon:before {
           display: inline-block;
           color: #fff;
           background: #967adc;
           padding: 0.5em;
           font-size: 2em;
-          -webkit-transition: -webkit-transform 300ms;
-                  transition: transform 300ms; }
+          transition: transform 300ms; }
 
 .home-about h3 {
   font-size: 1.5em;

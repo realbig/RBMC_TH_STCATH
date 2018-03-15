@@ -27,7 +27,7 @@
 
     // Nav menu toggle
     $header.find('.site-nav-toggle').click(function () {
-       $(this).toggleClass('active').siblings('.menu').toggleClass('visible');
+       $(this).toggleClass('active').siblings('.site-nav-container').toggleClass('visible');
     });
 
     // Nav menu mobile toggle
@@ -50,7 +50,7 @@
     $(window).resize(navHeight);
 
     function navHeight() {
-        $header.find('.site-nav .menu').css('max-height', $(window).height() - $header.height());
+        $header.find('.site-nav-container').css('max-height', $(window).height() - $header.height());
     }
 
 })(jQuery);
