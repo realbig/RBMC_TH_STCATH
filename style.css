@@ -176,7 +176,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -305,8 +304,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -1912,11 +1909,10 @@ html, body {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-html, body {
+html,
+body {
   font-size: 14px; }
 
 body {
@@ -3542,49 +3538,49 @@ button, .button, input[type="submit"], #tribe-events .tribe-events-button {
   border-color: #6b44ce;
   color: #FFFFFF;
   transition: background-color 300ms ease-out; }
-  button:hover, button:focus, .button:hover, input:hover[type="submit"], #tribe-events .tribe-events-button:hover, .button:focus, input:focus[type="submit"], #tribe-events .tribe-events-button:focus {
+  button:hover, button:focus, .button:hover, input[type="submit"]:hover, #tribe-events .tribe-events-button:hover, .button:focus, input[type="submit"]:focus, #tribe-events .tribe-events-button:focus {
     background: #6b44ce; }
-  button:hover, button:focus, .button:hover, input:hover[type="submit"], #tribe-events .tribe-events-button:hover, .button:focus, input:focus[type="submit"], #tribe-events .tribe-events-button:focus {
+  button:hover, button:focus, .button:hover, input[type="submit"]:hover, #tribe-events .tribe-events-button:hover, .button:focus, input[type="submit"]:focus, #tribe-events .tribe-events-button:focus {
     color: #FFFFFF; }
   button.secondary, .button.secondary, input.secondary[type="submit"], #tribe-events .secondary.tribe-events-button {
     background: #999;
     border-color: #7a7a7a;
     color: #FFFFFF; }
-    button.secondary:hover, button.secondary:focus, .button.secondary:hover, input.secondary:hover[type="submit"], #tribe-events .secondary.tribe-events-button:hover, .button.secondary:focus, input.secondary:focus[type="submit"], #tribe-events .secondary.tribe-events-button:focus {
+    button.secondary:hover, button.secondary:focus, .button.secondary:hover, input.secondary[type="submit"]:hover, #tribe-events .secondary.tribe-events-button:hover, .button.secondary:focus, input.secondary[type="submit"]:focus, #tribe-events .secondary.tribe-events-button:focus {
       background: #7a7a7a; }
-    button.secondary:hover, button.secondary:focus, .button.secondary:hover, input.secondary:hover[type="submit"], #tribe-events .secondary.tribe-events-button:hover, .button.secondary:focus, input.secondary:focus[type="submit"], #tribe-events .secondary.tribe-events-button:focus {
+    button.secondary:hover, button.secondary:focus, .button.secondary:hover, input.secondary[type="submit"]:hover, #tribe-events .secondary.tribe-events-button:hover, .button.secondary:focus, input.secondary[type="submit"]:focus, #tribe-events .secondary.tribe-events-button:focus {
       color: #FFFFFF; }
   button.success, .button.success, input.success[type="submit"], #tribe-events .success.tribe-events-button {
     background: #43AC6A;
     border-color: #368a55;
     color: #FFFFFF; }
-    button.success:hover, button.success:focus, .button.success:hover, input.success:hover[type="submit"], #tribe-events .success.tribe-events-button:hover, .button.success:focus, input.success:focus[type="submit"], #tribe-events .success.tribe-events-button:focus {
+    button.success:hover, button.success:focus, .button.success:hover, input.success[type="submit"]:hover, #tribe-events .success.tribe-events-button:hover, .button.success:focus, input.success[type="submit"]:focus, #tribe-events .success.tribe-events-button:focus {
       background: #368a55; }
-    button.success:hover, button.success:focus, .button.success:hover, input.success:hover[type="submit"], #tribe-events .success.tribe-events-button:hover, .button.success:focus, input.success:focus[type="submit"], #tribe-events .success.tribe-events-button:focus {
+    button.success:hover, button.success:focus, .button.success:hover, input.success[type="submit"]:hover, #tribe-events .success.tribe-events-button:hover, .button.success:focus, input.success[type="submit"]:focus, #tribe-events .success.tribe-events-button:focus {
       color: #FFFFFF; }
   button.alert, .button.alert, input.alert[type="submit"], #tribe-events .alert.tribe-events-button {
     background: #f04124;
     border-color: #cf2a0e;
     color: #FFFFFF; }
-    button.alert:hover, button.alert:focus, .button.alert:hover, input.alert:hover[type="submit"], #tribe-events .alert.tribe-events-button:hover, .button.alert:focus, input.alert:focus[type="submit"], #tribe-events .alert.tribe-events-button:focus {
+    button.alert:hover, button.alert:focus, .button.alert:hover, input.alert[type="submit"]:hover, #tribe-events .alert.tribe-events-button:hover, .button.alert:focus, input.alert[type="submit"]:focus, #tribe-events .alert.tribe-events-button:focus {
       background: #cf2a0e; }
-    button.alert:hover, button.alert:focus, .button.alert:hover, input.alert:hover[type="submit"], #tribe-events .alert.tribe-events-button:hover, .button.alert:focus, input.alert:focus[type="submit"], #tribe-events .alert.tribe-events-button:focus {
+    button.alert:hover, button.alert:focus, .button.alert:hover, input.alert[type="submit"]:hover, #tribe-events .alert.tribe-events-button:hover, .button.alert:focus, input.alert[type="submit"]:focus, #tribe-events .alert.tribe-events-button:focus {
       color: #FFFFFF; }
   button.warning, .button.warning, input.warning[type="submit"], #tribe-events .warning.tribe-events-button {
     background: #f08a24;
     border-color: #cf6e0e;
     color: #FFFFFF; }
-    button.warning:hover, button.warning:focus, .button.warning:hover, input.warning:hover[type="submit"], #tribe-events .warning.tribe-events-button:hover, .button.warning:focus, input.warning:focus[type="submit"], #tribe-events .warning.tribe-events-button:focus {
+    button.warning:hover, button.warning:focus, .button.warning:hover, input.warning[type="submit"]:hover, #tribe-events .warning.tribe-events-button:hover, .button.warning:focus, input.warning[type="submit"]:focus, #tribe-events .warning.tribe-events-button:focus {
       background: #cf6e0e; }
-    button.warning:hover, button.warning:focus, .button.warning:hover, input.warning:hover[type="submit"], #tribe-events .warning.tribe-events-button:hover, .button.warning:focus, input.warning:focus[type="submit"], #tribe-events .warning.tribe-events-button:focus {
+    button.warning:hover, button.warning:focus, .button.warning:hover, input.warning[type="submit"]:hover, #tribe-events .warning.tribe-events-button:hover, .button.warning:focus, input.warning[type="submit"]:focus, #tribe-events .warning.tribe-events-button:focus {
       color: #FFFFFF; }
   button.info, .button.info, input.info[type="submit"], #tribe-events .info.tribe-events-button {
     background: #a0d3e8;
     border-color: #61b6d9;
     color: #333333; }
-    button.info:hover, button.info:focus, .button.info:hover, input.info:hover[type="submit"], #tribe-events .info.tribe-events-button:hover, .button.info:focus, input.info:focus[type="submit"], #tribe-events .info.tribe-events-button:focus {
+    button.info:hover, button.info:focus, .button.info:hover, input.info[type="submit"]:hover, #tribe-events .info.tribe-events-button:hover, .button.info:focus, input.info[type="submit"]:focus, #tribe-events .info.tribe-events-button:focus {
       background: #61b6d9; }
-    button.info:hover, button.info:focus, .button.info:hover, input.info:hover[type="submit"], #tribe-events .info.tribe-events-button:hover, .button.info:focus, input.info:focus[type="submit"], #tribe-events .info.tribe-events-button:focus {
+    button.info:hover, button.info:focus, .button.info:hover, input.info[type="submit"]:hover, #tribe-events .info.tribe-events-button:hover, .button.info:focus, input.info[type="submit"]:focus, #tribe-events .info.tribe-events-button:focus {
       color: #FFFFFF; }
   button.large, .button.large, input.large[type="submit"], #tribe-events .large.tribe-events-button {
     padding-top: 1.2857142857rem;
@@ -3598,7 +3594,7 @@ button, .button, input[type="submit"], #tribe-events .tribe-events-button {
     padding-bottom: 1.0714285714rem;
     padding-left: 2rem;
     font-size: 0.9285714286rem; }
-  button.tiny, body.single-tribe_events .tribe-events-cal-links button.tribe-events-button, .button.tiny, input.tiny[type="submit"], body.single-tribe_events .tribe-events-cal-links input.tribe-events-button[type="submit"], #tribe-events .tiny.tribe-events-button, #tribe-events body.single-tribe_events .tribe-events-cal-links .tribe-events-button, body.single-tribe_events .tribe-events-cal-links #tribe-events .tribe-events-button, body.single-tribe_events .tribe-events-cal-links .button.tribe-events-button {
+  button.tiny, body.single-tribe_events .tribe-events-cal-links button.tribe-events-button, .button.tiny, input.tiny[type="submit"], body.single-tribe_events .tribe-events-cal-links input[type="submit"].tribe-events-button, #tribe-events .tiny.tribe-events-button, #tribe-events body.single-tribe_events .tribe-events-cal-links .tribe-events-button, body.single-tribe_events .tribe-events-cal-links #tribe-events .tribe-events-button, body.single-tribe_events .tribe-events-cal-links .button.tribe-events-button {
     padding-top: 0.7142857143rem;
     padding-right: 1.4285714286rem;
     padding-bottom: 0.7857142857rem;
@@ -3618,83 +3614,83 @@ button, .button, input[type="submit"], #tribe-events .tribe-events-button {
     border-radius: 3px; }
   button.round, .button.round, input.round[type="submit"], #tribe-events .round.tribe-events-button {
     border-radius: 1000px; }
-  button.disabled, button[disabled], .button.disabled, input.disabled[type="submit"], #tribe-events .disabled.tribe-events-button, .button[disabled], input[disabled][type="submit"], #tribe-events .tribe-events-button[disabled] {
+  button.disabled, button[disabled], .button.disabled, input.disabled[type="submit"], #tribe-events .disabled.tribe-events-button, .button[disabled], input[disabled][type="submit"], #tribe-events [disabled].tribe-events-button {
     background: #967adc;
     border-color: #6b44ce;
     color: #FFFFFF;
     cursor: default;
     opacity: 0.7;
     box-shadow: none; }
-    button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, input.disabled:hover[type="submit"], #tribe-events .disabled.tribe-events-button:hover, .button.disabled:focus, input.disabled:focus[type="submit"], #tribe-events .disabled.tribe-events-button:focus, .button[disabled]:hover, input[disabled]:hover[type="submit"], #tribe-events .tribe-events-button[disabled]:hover, .button[disabled]:focus, input[disabled]:focus[type="submit"], #tribe-events .tribe-events-button[disabled]:focus {
+    button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, input.disabled[type="submit"]:hover, #tribe-events .disabled.tribe-events-button:hover, .button.disabled:focus, input.disabled[type="submit"]:focus, #tribe-events .disabled.tribe-events-button:focus, .button[disabled]:hover, input[disabled][type="submit"]:hover, #tribe-events [disabled].tribe-events-button:hover, .button[disabled]:focus, input[disabled][type="submit"]:focus, #tribe-events [disabled].tribe-events-button:focus {
       background: #6b44ce; }
-    button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, input.disabled:hover[type="submit"], #tribe-events .disabled.tribe-events-button:hover, .button.disabled:focus, input.disabled:focus[type="submit"], #tribe-events .disabled.tribe-events-button:focus, .button[disabled]:hover, input[disabled]:hover[type="submit"], #tribe-events .tribe-events-button[disabled]:hover, .button[disabled]:focus, input[disabled]:focus[type="submit"], #tribe-events .tribe-events-button[disabled]:focus {
+    button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, input.disabled[type="submit"]:hover, #tribe-events .disabled.tribe-events-button:hover, .button.disabled:focus, input.disabled[type="submit"]:focus, #tribe-events .disabled.tribe-events-button:focus, .button[disabled]:hover, input[disabled][type="submit"]:hover, #tribe-events [disabled].tribe-events-button:hover, .button[disabled]:focus, input[disabled][type="submit"]:focus, #tribe-events [disabled].tribe-events-button:focus {
       color: #FFFFFF; }
-    button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, input.disabled:hover[type="submit"], #tribe-events .disabled.tribe-events-button:hover, .button.disabled:focus, input.disabled:focus[type="submit"], #tribe-events .disabled.tribe-events-button:focus, .button[disabled]:hover, input[disabled]:hover[type="submit"], #tribe-events .tribe-events-button[disabled]:hover, .button[disabled]:focus, input[disabled]:focus[type="submit"], #tribe-events .tribe-events-button[disabled]:focus {
+    button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, input.disabled[type="submit"]:hover, #tribe-events .disabled.tribe-events-button:hover, .button.disabled:focus, input.disabled[type="submit"]:focus, #tribe-events .disabled.tribe-events-button:focus, .button[disabled]:hover, input[disabled][type="submit"]:hover, #tribe-events [disabled].tribe-events-button:hover, .button[disabled]:focus, input[disabled][type="submit"]:focus, #tribe-events [disabled].tribe-events-button:focus {
       background: #967adc; }
-    button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, input.disabled.secondary[type="submit"], #tribe-events .disabled.secondary.tribe-events-button, .button[disabled].secondary, input[disabled].secondary[type="submit"], #tribe-events .tribe-events-button[disabled].secondary {
+    button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, input.disabled.secondary[type="submit"], #tribe-events .disabled.secondary.tribe-events-button, .button[disabled].secondary, input[disabled].secondary[type="submit"], #tribe-events [disabled].secondary.tribe-events-button {
       background: #999;
       border-color: #7a7a7a;
       color: #FFFFFF;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
-      button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, input.disabled.secondary:hover[type="submit"], #tribe-events .disabled.secondary.tribe-events-button:hover, .button.disabled.secondary:focus, input.disabled.secondary:focus[type="submit"], #tribe-events .disabled.secondary.tribe-events-button:focus, .button[disabled].secondary:hover, input[disabled].secondary:hover[type="submit"], #tribe-events .tribe-events-button[disabled].secondary:hover, .button[disabled].secondary:focus, input[disabled].secondary:focus[type="submit"], #tribe-events .tribe-events-button[disabled].secondary:focus {
+      button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, input.disabled.secondary[type="submit"]:hover, #tribe-events .disabled.secondary.tribe-events-button:hover, .button.disabled.secondary:focus, input.disabled.secondary[type="submit"]:focus, #tribe-events .disabled.secondary.tribe-events-button:focus, .button[disabled].secondary:hover, input[disabled].secondary[type="submit"]:hover, #tribe-events [disabled].secondary.tribe-events-button:hover, .button[disabled].secondary:focus, input[disabled].secondary[type="submit"]:focus, #tribe-events [disabled].secondary.tribe-events-button:focus {
         background: #7a7a7a; }
-      button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, input.disabled.secondary:hover[type="submit"], #tribe-events .disabled.secondary.tribe-events-button:hover, .button.disabled.secondary:focus, input.disabled.secondary:focus[type="submit"], #tribe-events .disabled.secondary.tribe-events-button:focus, .button[disabled].secondary:hover, input[disabled].secondary:hover[type="submit"], #tribe-events .tribe-events-button[disabled].secondary:hover, .button[disabled].secondary:focus, input[disabled].secondary:focus[type="submit"], #tribe-events .tribe-events-button[disabled].secondary:focus {
+      button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, input.disabled.secondary[type="submit"]:hover, #tribe-events .disabled.secondary.tribe-events-button:hover, .button.disabled.secondary:focus, input.disabled.secondary[type="submit"]:focus, #tribe-events .disabled.secondary.tribe-events-button:focus, .button[disabled].secondary:hover, input[disabled].secondary[type="submit"]:hover, #tribe-events [disabled].secondary.tribe-events-button:hover, .button[disabled].secondary:focus, input[disabled].secondary[type="submit"]:focus, #tribe-events [disabled].secondary.tribe-events-button:focus {
         color: #FFFFFF; }
-      button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, input.disabled.secondary:hover[type="submit"], #tribe-events .disabled.secondary.tribe-events-button:hover, .button.disabled.secondary:focus, input.disabled.secondary:focus[type="submit"], #tribe-events .disabled.secondary.tribe-events-button:focus, .button[disabled].secondary:hover, input[disabled].secondary:hover[type="submit"], #tribe-events .tribe-events-button[disabled].secondary:hover, .button[disabled].secondary:focus, input[disabled].secondary:focus[type="submit"], #tribe-events .tribe-events-button[disabled].secondary:focus {
+      button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, input.disabled.secondary[type="submit"]:hover, #tribe-events .disabled.secondary.tribe-events-button:hover, .button.disabled.secondary:focus, input.disabled.secondary[type="submit"]:focus, #tribe-events .disabled.secondary.tribe-events-button:focus, .button[disabled].secondary:hover, input[disabled].secondary[type="submit"]:hover, #tribe-events [disabled].secondary.tribe-events-button:hover, .button[disabled].secondary:focus, input[disabled].secondary[type="submit"]:focus, #tribe-events [disabled].secondary.tribe-events-button:focus {
         background: #999; }
-    button.disabled.success, button[disabled].success, .button.disabled.success, input.disabled.success[type="submit"], #tribe-events .disabled.success.tribe-events-button, .button[disabled].success, input[disabled].success[type="submit"], #tribe-events .tribe-events-button[disabled].success {
+    button.disabled.success, button[disabled].success, .button.disabled.success, input.disabled.success[type="submit"], #tribe-events .disabled.success.tribe-events-button, .button[disabled].success, input[disabled].success[type="submit"], #tribe-events [disabled].success.tribe-events-button {
       background: #43AC6A;
       border-color: #368a55;
       color: #FFFFFF;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
-      button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, input.disabled.success:hover[type="submit"], #tribe-events .disabled.success.tribe-events-button:hover, .button.disabled.success:focus, input.disabled.success:focus[type="submit"], #tribe-events .disabled.success.tribe-events-button:focus, .button[disabled].success:hover, input[disabled].success:hover[type="submit"], #tribe-events .tribe-events-button[disabled].success:hover, .button[disabled].success:focus, input[disabled].success:focus[type="submit"], #tribe-events .tribe-events-button[disabled].success:focus {
+      button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, input.disabled.success[type="submit"]:hover, #tribe-events .disabled.success.tribe-events-button:hover, .button.disabled.success:focus, input.disabled.success[type="submit"]:focus, #tribe-events .disabled.success.tribe-events-button:focus, .button[disabled].success:hover, input[disabled].success[type="submit"]:hover, #tribe-events [disabled].success.tribe-events-button:hover, .button[disabled].success:focus, input[disabled].success[type="submit"]:focus, #tribe-events [disabled].success.tribe-events-button:focus {
         background: #368a55; }
-      button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, input.disabled.success:hover[type="submit"], #tribe-events .disabled.success.tribe-events-button:hover, .button.disabled.success:focus, input.disabled.success:focus[type="submit"], #tribe-events .disabled.success.tribe-events-button:focus, .button[disabled].success:hover, input[disabled].success:hover[type="submit"], #tribe-events .tribe-events-button[disabled].success:hover, .button[disabled].success:focus, input[disabled].success:focus[type="submit"], #tribe-events .tribe-events-button[disabled].success:focus {
+      button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, input.disabled.success[type="submit"]:hover, #tribe-events .disabled.success.tribe-events-button:hover, .button.disabled.success:focus, input.disabled.success[type="submit"]:focus, #tribe-events .disabled.success.tribe-events-button:focus, .button[disabled].success:hover, input[disabled].success[type="submit"]:hover, #tribe-events [disabled].success.tribe-events-button:hover, .button[disabled].success:focus, input[disabled].success[type="submit"]:focus, #tribe-events [disabled].success.tribe-events-button:focus {
         color: #FFFFFF; }
-      button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, input.disabled.success:hover[type="submit"], #tribe-events .disabled.success.tribe-events-button:hover, .button.disabled.success:focus, input.disabled.success:focus[type="submit"], #tribe-events .disabled.success.tribe-events-button:focus, .button[disabled].success:hover, input[disabled].success:hover[type="submit"], #tribe-events .tribe-events-button[disabled].success:hover, .button[disabled].success:focus, input[disabled].success:focus[type="submit"], #tribe-events .tribe-events-button[disabled].success:focus {
+      button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, input.disabled.success[type="submit"]:hover, #tribe-events .disabled.success.tribe-events-button:hover, .button.disabled.success:focus, input.disabled.success[type="submit"]:focus, #tribe-events .disabled.success.tribe-events-button:focus, .button[disabled].success:hover, input[disabled].success[type="submit"]:hover, #tribe-events [disabled].success.tribe-events-button:hover, .button[disabled].success:focus, input[disabled].success[type="submit"]:focus, #tribe-events [disabled].success.tribe-events-button:focus {
         background: #43AC6A; }
-    button.disabled.alert, button[disabled].alert, .button.disabled.alert, input.disabled.alert[type="submit"], #tribe-events .disabled.alert.tribe-events-button, .button[disabled].alert, input[disabled].alert[type="submit"], #tribe-events .tribe-events-button[disabled].alert {
+    button.disabled.alert, button[disabled].alert, .button.disabled.alert, input.disabled.alert[type="submit"], #tribe-events .disabled.alert.tribe-events-button, .button[disabled].alert, input[disabled].alert[type="submit"], #tribe-events [disabled].alert.tribe-events-button {
       background: #f04124;
       border-color: #cf2a0e;
       color: #FFFFFF;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
-      button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, input.disabled.alert:hover[type="submit"], #tribe-events .disabled.alert.tribe-events-button:hover, .button.disabled.alert:focus, input.disabled.alert:focus[type="submit"], #tribe-events .disabled.alert.tribe-events-button:focus, .button[disabled].alert:hover, input[disabled].alert:hover[type="submit"], #tribe-events .tribe-events-button[disabled].alert:hover, .button[disabled].alert:focus, input[disabled].alert:focus[type="submit"], #tribe-events .tribe-events-button[disabled].alert:focus {
+      button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, input.disabled.alert[type="submit"]:hover, #tribe-events .disabled.alert.tribe-events-button:hover, .button.disabled.alert:focus, input.disabled.alert[type="submit"]:focus, #tribe-events .disabled.alert.tribe-events-button:focus, .button[disabled].alert:hover, input[disabled].alert[type="submit"]:hover, #tribe-events [disabled].alert.tribe-events-button:hover, .button[disabled].alert:focus, input[disabled].alert[type="submit"]:focus, #tribe-events [disabled].alert.tribe-events-button:focus {
         background: #cf2a0e; }
-      button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, input.disabled.alert:hover[type="submit"], #tribe-events .disabled.alert.tribe-events-button:hover, .button.disabled.alert:focus, input.disabled.alert:focus[type="submit"], #tribe-events .disabled.alert.tribe-events-button:focus, .button[disabled].alert:hover, input[disabled].alert:hover[type="submit"], #tribe-events .tribe-events-button[disabled].alert:hover, .button[disabled].alert:focus, input[disabled].alert:focus[type="submit"], #tribe-events .tribe-events-button[disabled].alert:focus {
+      button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, input.disabled.alert[type="submit"]:hover, #tribe-events .disabled.alert.tribe-events-button:hover, .button.disabled.alert:focus, input.disabled.alert[type="submit"]:focus, #tribe-events .disabled.alert.tribe-events-button:focus, .button[disabled].alert:hover, input[disabled].alert[type="submit"]:hover, #tribe-events [disabled].alert.tribe-events-button:hover, .button[disabled].alert:focus, input[disabled].alert[type="submit"]:focus, #tribe-events [disabled].alert.tribe-events-button:focus {
         color: #FFFFFF; }
-      button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, input.disabled.alert:hover[type="submit"], #tribe-events .disabled.alert.tribe-events-button:hover, .button.disabled.alert:focus, input.disabled.alert:focus[type="submit"], #tribe-events .disabled.alert.tribe-events-button:focus, .button[disabled].alert:hover, input[disabled].alert:hover[type="submit"], #tribe-events .tribe-events-button[disabled].alert:hover, .button[disabled].alert:focus, input[disabled].alert:focus[type="submit"], #tribe-events .tribe-events-button[disabled].alert:focus {
+      button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, input.disabled.alert[type="submit"]:hover, #tribe-events .disabled.alert.tribe-events-button:hover, .button.disabled.alert:focus, input.disabled.alert[type="submit"]:focus, #tribe-events .disabled.alert.tribe-events-button:focus, .button[disabled].alert:hover, input[disabled].alert[type="submit"]:hover, #tribe-events [disabled].alert.tribe-events-button:hover, .button[disabled].alert:focus, input[disabled].alert[type="submit"]:focus, #tribe-events [disabled].alert.tribe-events-button:focus {
         background: #f04124; }
-    button.disabled.warning, button[disabled].warning, .button.disabled.warning, input.disabled.warning[type="submit"], #tribe-events .disabled.warning.tribe-events-button, .button[disabled].warning, input[disabled].warning[type="submit"], #tribe-events .tribe-events-button[disabled].warning {
+    button.disabled.warning, button[disabled].warning, .button.disabled.warning, input.disabled.warning[type="submit"], #tribe-events .disabled.warning.tribe-events-button, .button[disabled].warning, input[disabled].warning[type="submit"], #tribe-events [disabled].warning.tribe-events-button {
       background: #f08a24;
       border-color: #cf6e0e;
       color: #FFFFFF;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
-      button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, input.disabled.warning:hover[type="submit"], #tribe-events .disabled.warning.tribe-events-button:hover, .button.disabled.warning:focus, input.disabled.warning:focus[type="submit"], #tribe-events .disabled.warning.tribe-events-button:focus, .button[disabled].warning:hover, input[disabled].warning:hover[type="submit"], #tribe-events .tribe-events-button[disabled].warning:hover, .button[disabled].warning:focus, input[disabled].warning:focus[type="submit"], #tribe-events .tribe-events-button[disabled].warning:focus {
+      button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, input.disabled.warning[type="submit"]:hover, #tribe-events .disabled.warning.tribe-events-button:hover, .button.disabled.warning:focus, input.disabled.warning[type="submit"]:focus, #tribe-events .disabled.warning.tribe-events-button:focus, .button[disabled].warning:hover, input[disabled].warning[type="submit"]:hover, #tribe-events [disabled].warning.tribe-events-button:hover, .button[disabled].warning:focus, input[disabled].warning[type="submit"]:focus, #tribe-events [disabled].warning.tribe-events-button:focus {
         background: #cf6e0e; }
-      button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, input.disabled.warning:hover[type="submit"], #tribe-events .disabled.warning.tribe-events-button:hover, .button.disabled.warning:focus, input.disabled.warning:focus[type="submit"], #tribe-events .disabled.warning.tribe-events-button:focus, .button[disabled].warning:hover, input[disabled].warning:hover[type="submit"], #tribe-events .tribe-events-button[disabled].warning:hover, .button[disabled].warning:focus, input[disabled].warning:focus[type="submit"], #tribe-events .tribe-events-button[disabled].warning:focus {
+      button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, input.disabled.warning[type="submit"]:hover, #tribe-events .disabled.warning.tribe-events-button:hover, .button.disabled.warning:focus, input.disabled.warning[type="submit"]:focus, #tribe-events .disabled.warning.tribe-events-button:focus, .button[disabled].warning:hover, input[disabled].warning[type="submit"]:hover, #tribe-events [disabled].warning.tribe-events-button:hover, .button[disabled].warning:focus, input[disabled].warning[type="submit"]:focus, #tribe-events [disabled].warning.tribe-events-button:focus {
         color: #FFFFFF; }
-      button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, input.disabled.warning:hover[type="submit"], #tribe-events .disabled.warning.tribe-events-button:hover, .button.disabled.warning:focus, input.disabled.warning:focus[type="submit"], #tribe-events .disabled.warning.tribe-events-button:focus, .button[disabled].warning:hover, input[disabled].warning:hover[type="submit"], #tribe-events .tribe-events-button[disabled].warning:hover, .button[disabled].warning:focus, input[disabled].warning:focus[type="submit"], #tribe-events .tribe-events-button[disabled].warning:focus {
+      button.disabled.warning:hover, button.disabled.warning:focus, button[disabled].warning:hover, button[disabled].warning:focus, .button.disabled.warning:hover, input.disabled.warning[type="submit"]:hover, #tribe-events .disabled.warning.tribe-events-button:hover, .button.disabled.warning:focus, input.disabled.warning[type="submit"]:focus, #tribe-events .disabled.warning.tribe-events-button:focus, .button[disabled].warning:hover, input[disabled].warning[type="submit"]:hover, #tribe-events [disabled].warning.tribe-events-button:hover, .button[disabled].warning:focus, input[disabled].warning[type="submit"]:focus, #tribe-events [disabled].warning.tribe-events-button:focus {
         background: #f08a24; }
-    button.disabled.info, button[disabled].info, .button.disabled.info, input.disabled.info[type="submit"], #tribe-events .disabled.info.tribe-events-button, .button[disabled].info, input[disabled].info[type="submit"], #tribe-events .tribe-events-button[disabled].info {
+    button.disabled.info, button[disabled].info, .button.disabled.info, input.disabled.info[type="submit"], #tribe-events .disabled.info.tribe-events-button, .button[disabled].info, input[disabled].info[type="submit"], #tribe-events [disabled].info.tribe-events-button {
       background: #a0d3e8;
       border-color: #61b6d9;
       color: #333333;
       cursor: default;
       opacity: 0.7;
       box-shadow: none; }
-      button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, input.disabled.info:hover[type="submit"], #tribe-events .disabled.info.tribe-events-button:hover, .button.disabled.info:focus, input.disabled.info:focus[type="submit"], #tribe-events .disabled.info.tribe-events-button:focus, .button[disabled].info:hover, input[disabled].info:hover[type="submit"], #tribe-events .tribe-events-button[disabled].info:hover, .button[disabled].info:focus, input[disabled].info:focus[type="submit"], #tribe-events .tribe-events-button[disabled].info:focus {
+      button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, input.disabled.info[type="submit"]:hover, #tribe-events .disabled.info.tribe-events-button:hover, .button.disabled.info:focus, input.disabled.info[type="submit"]:focus, #tribe-events .disabled.info.tribe-events-button:focus, .button[disabled].info:hover, input[disabled].info[type="submit"]:hover, #tribe-events [disabled].info.tribe-events-button:hover, .button[disabled].info:focus, input[disabled].info[type="submit"]:focus, #tribe-events [disabled].info.tribe-events-button:focus {
         background: #61b6d9; }
-      button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, input.disabled.info:hover[type="submit"], #tribe-events .disabled.info.tribe-events-button:hover, .button.disabled.info:focus, input.disabled.info:focus[type="submit"], #tribe-events .disabled.info.tribe-events-button:focus, .button[disabled].info:hover, input[disabled].info:hover[type="submit"], #tribe-events .tribe-events-button[disabled].info:hover, .button[disabled].info:focus, input[disabled].info:focus[type="submit"], #tribe-events .tribe-events-button[disabled].info:focus {
+      button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, input.disabled.info[type="submit"]:hover, #tribe-events .disabled.info.tribe-events-button:hover, .button.disabled.info:focus, input.disabled.info[type="submit"]:focus, #tribe-events .disabled.info.tribe-events-button:focus, .button[disabled].info:hover, input[disabled].info[type="submit"]:hover, #tribe-events [disabled].info.tribe-events-button:hover, .button[disabled].info:focus, input[disabled].info[type="submit"]:focus, #tribe-events [disabled].info.tribe-events-button:focus {
         color: #FFFFFF; }
-      button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, input.disabled.info:hover[type="submit"], #tribe-events .disabled.info.tribe-events-button:hover, .button.disabled.info:focus, input.disabled.info:focus[type="submit"], #tribe-events .disabled.info.tribe-events-button:focus, .button[disabled].info:hover, input[disabled].info:hover[type="submit"], #tribe-events .tribe-events-button[disabled].info:hover, .button[disabled].info:focus, input[disabled].info:focus[type="submit"], #tribe-events .tribe-events-button[disabled].info:focus {
+      button.disabled.info:hover, button.disabled.info:focus, button[disabled].info:hover, button[disabled].info:focus, .button.disabled.info:hover, input.disabled.info[type="submit"]:hover, #tribe-events .disabled.info.tribe-events-button:hover, .button.disabled.info:focus, input.disabled.info[type="submit"]:focus, #tribe-events .disabled.info.tribe-events-button:focus, .button[disabled].info:hover, input[disabled].info[type="submit"]:hover, #tribe-events [disabled].info.tribe-events-button:hover, .button[disabled].info:focus, input[disabled].info[type="submit"]:focus, #tribe-events [disabled].info.tribe-events-button:focus {
         background: #a0d3e8; }
 
 button::-moz-focus-inner {
@@ -4267,8 +4263,6 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   padding: 0.5714285714rem;
   height: 2.6428571429rem;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
   input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
@@ -5248,5 +5242,4 @@ This provides overrides for some WP stuff (not much at all).
 */
 #wpadminbar {
   position: fixed !important; }
-
 /*# sourceMappingURL=style.css.map */
