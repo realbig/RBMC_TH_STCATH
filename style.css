@@ -4758,7 +4758,7 @@ throughout this theme's SASS files.
   text-transform: none; }
 
 @media only screen and (max-width: 40em) {
-  #site-header #menu-primary {
+  #site-header .has-secondary-menu #menu-primary {
     margin-top: 0; } }
 
 #page-header {

@@ -325,7 +325,7 @@ The static site header.
   }
 }
 
-#site-header #menu-primary {
+#site-header .has-secondary-menu #menu-primary {
   @media #{$small-only} {
     margin-top: 0;
   }

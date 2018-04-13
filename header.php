@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <span class="close icon-cross"></span>
                 </div>
 
-                <div class="site-nav-container">
+                <div class="site-nav-container <?php echo has_nav_menu( 'secondary' ) ? 'has-secondary-menu' : ''; ?>">
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'secondary',
