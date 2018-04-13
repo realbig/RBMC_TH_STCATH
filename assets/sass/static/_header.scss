@@ -164,6 +164,22 @@ The static site header.
           display: block;
         }
 
+        &.menu-item-has-children {
+
+          // More arrow
+          > a:after {
+            @media #{$small-only} {
+              content: '\203A';
+            }
+
+            font-size: 1.5em;
+            right: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
         > a {
           padding: 0 5px;
           line-height: $header-height / 2;
@@ -264,13 +280,15 @@ The static site header.
 
       // Spacer above so easy to get mouse in on hover
       &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        margin-top: -$gutter;
-        height: $gutter;
+        @media #{$medium-up} {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          margin-top: -$gutter;
+          height: $gutter;
+        }
       }
 
       // Arrow

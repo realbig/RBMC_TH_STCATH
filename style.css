@@ -4659,6 +4659,15 @@ throughout this theme's SASS files.
         @media only screen and (max-width: 40em) {
           #site-header .site-nav .menu > li {
             display: block; } }
+        #site-header .site-nav .menu > li.menu-item-has-children > a:after {
+          font-size: 1.5em;
+          right: 10px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%); }
+          @media only screen and (max-width: 40em) {
+            #site-header .site-nav .menu > li.menu-item-has-children > a:after {
+              content: '\203A'; } }
         #site-header .site-nav .menu > li > a {
           padding: 0 5px;
           line-height: 40px; }
@@ -4717,14 +4726,15 @@ throughout this theme's SASS files.
       margin-top: -1px;
       text-transform: none;
       font-size: 0.8em; }
-      #site-header .site-nav .menu > li > .sub-menu:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        margin-top: -30px;
-        height: 30px; }
+      @media only screen and (min-width: 40.063em) {
+        #site-header .site-nav .menu > li > .sub-menu:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          margin-top: -30px;
+          height: 30px; } }
       #site-header .site-nav .menu > li > .sub-menu:after {
         content: '';
         position: absolute;

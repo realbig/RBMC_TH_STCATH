@@ -33,6 +33,10 @@
     // Nav menu mobile toggle
     $header.find('.site-nav').find('.menu-item').click(function (e) {
 
+        if ( $(window).width() > 640 ) {
+            return;
+        }
+
         e.stopPropagation();
 
         var active = $(this).hasClass('mHover');
@@ -42,6 +46,7 @@
 
         if (!active) {
             $(this).addClass('mHover');
+            e.preventDefault();
         }
     });
 
