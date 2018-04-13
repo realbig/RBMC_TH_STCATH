@@ -3,7 +3,6 @@ The static site header.
 
 @since 0.1.0
 */
-
 @import "../settings";
 
 #site-header {
@@ -35,6 +34,10 @@ The static site header.
       position: absolute;
       left: 170px;
       white-space: nowrap;
+
+      @media #{$small-only} {
+        position: initial;
+      }
     }
 
     img {
@@ -42,6 +45,20 @@ The static site header.
       width: auto;
       height: 79px;
       top: 0;
+
+      @media #{$small-only} {
+        position: initial;
+        max-width: 75px;
+        height: auto;
+      }
+    }
+  }
+
+  .site-nav-container {
+    &.visible {
+      .menu {
+        display: block;
+      }
     }
   }
 
@@ -119,10 +136,6 @@ The static site header.
         border-bottom: 1px solid #ddd;
         max-height: 300px;
         max-height: 70vh;
-      }
-
-      &.visible {
-        display: block;
       }
 
       a {
@@ -291,6 +304,12 @@ The static site header.
   li {
     font-style: italic;
     text-transform: none;
+  }
+}
+
+#site-header #menu-primary {
+  @media #{$small-only} {
+    margin-top: 0;
   }
 }
 

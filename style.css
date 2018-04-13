@@ -4576,11 +4576,21 @@ throughout this theme's SASS files.
       position: absolute;
       left: 170px;
       white-space: nowrap; }
+      @media only screen and (max-width: 40em) {
+        #site-header .site-title .site-title-text {
+          position: initial; } }
     #site-header .site-title img {
       position: absolute;
       width: auto;
       height: 79px;
       top: 0; }
+      @media only screen and (max-width: 40em) {
+        #site-header .site-title img {
+          position: initial;
+          max-width: 75px;
+          height: auto; } }
+  #site-header .site-nav-container.visible .menu {
+    display: block; }
   #site-header .site-nav {
     position: relative;
     font-size: 0.8em; }
@@ -4635,8 +4645,6 @@ throughout this theme's SASS files.
           border-bottom: 1px solid #ddd;
           max-height: 300px;
           max-height: 70vh; } }
-      #site-header .site-nav .menu.visible {
-        display: block; }
       #site-header .site-nav .menu a {
         display: block; }
       #site-header .site-nav .menu .menu-item.mHover > .sub-menu {
@@ -4738,6 +4746,10 @@ throughout this theme's SASS files.
 #site-header #menu-secondary li {
   font-style: italic;
   text-transform: none; }
+
+@media only screen and (max-width: 40em) {
+  #site-header #menu-primary {
+    margin-top: 0; } }
 
 #page-header {
   background-size: cover;
