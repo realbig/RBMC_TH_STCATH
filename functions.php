@@ -35,9 +35,9 @@ define( 'THEME_ID', 'stcath' );
  * Fonts for the theme. Must be hosted font (Google fonts for example).
  */
 $theme_fonts = array(
-	'Roboto' => 'http://fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400',
-	'Volkhov' => 'http://fonts.googleapis.com/css?family=Volkhov:400italic',
-	'Dancing Script' => 'http://fonts.googleapis.com/css?family=Dancing+Script',
+	'Roboto' => 'https://fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400',
+	'Volkhov' => 'https://fonts.googleapis.com/css?family=Volkhov:400italic',
+	'Dancing Script' => 'https://fonts.googleapis.com/css?family=Dancing+Script',
 );
 
 /**
